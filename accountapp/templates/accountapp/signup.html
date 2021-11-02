@@ -7,10 +7,17 @@
     <div style="width: 400px; margin: 0 auto; ">
       <h3>회원가입</h3>
       <br>
-      <form method="post" action="">
+      <form method="post" action="" >
           {% csrf_token %}
-          {% bootstrap_form form %}
-          <input type="submit" value="회원가입" />
+          아이디 : <input name="username" type="text" value="">
+          <br>
+          이메일 : <input name="email" type="email" value="">
+          <br>
+          비밀번호 : <input name="password1" type="password" value="">
+          <br>
+          비밀번호 확인 : <input name="password2" type="password" value="">
+          <br>
+          <input class="btn btn-primary" type="submit" value="회원가입" />
       </form>
     </div>
 
