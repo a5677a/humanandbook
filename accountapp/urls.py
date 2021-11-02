@@ -18,5 +18,10 @@ urlpatterns = [
     path('update/<int:pk>', AccUpdateView.as_view(), name='update'),
     path('delete/<int:pk>', AccDeleteView.as_view(), name='delete'),
 
-
+    path('send_email/', views.send_email, name='send_email'),
+    path('password_reset/', auth_views.PasswordResetView.as_view(), name="password_reset"),
+    path('password_reset_done/', auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
+    path('password_reset_confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),
+         name="password_reset_confirm"),
+    path('password_reset_complete/', auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
 ]
